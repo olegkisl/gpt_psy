@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+</head>
+<body   style="background-color:rgb(200,200,200);" >
+
+
+<h2> Диалог с консультантом </h2>
+
+<iframe height="300px" width="100%" title="dialog" name="dialog" id="dialog" style="background-color:rgb(220,220,200);" ></iframe>
+<p></p>
+<form action="/init" method="post" target="dialog" id="1321"  >
+    <h3>Текст Клиента:</h3>
+    <textarea  name="fname" id="fname" rows="3" cols="100"  style="background-color:rgb(220,220,200);"  ></textarea><br>
+    <input type="button" onclick="myFunction()" value="Submit Client Message" id="b" disabled >
+</form>
+
+<br>
+<form action="/start" method="get" target="dialog" id="start">
+    <input type="button" onclick="myFunction1()" value="Start Session" id="b1">
+</form>
+
+<br>
+<form action="/stop" method="get" target="dialog" id="stop">
+    <input type="button" onclick="myFunction2()" value="Stop Session"  id="b2" disabled >
+</form>
+
+<br>
+<form action="/select" method="get" target="dialog" id="select">
+  <label for="cs">Consultant:</label>
+  <select  onChange="myFunction3()" id="cs" name="cs"  >>
+    <option value="default">Anna: Default consultant</option>
+    <option value="consult_2">Анна: Рускоязычный Консультант</option>
+    <option value="consult_3">John: Buddhist, Psychoanalyst </option>
+    <option value="consult_4">Alex: Ericson/Art/Solution Focused </option>
+  </select>
+</form>
+
+<script>
+document.getElementById("dialog").onload = function () { this.contentWindow.scrollTo(0, 999999) };
+
+function myFunction() {
+  if(document.getElementById("fname").value.trim() == "")
+        return;
+  document.getElementById("1321").submit();
+  document.getElementById("fname").value = "";
+  document.getElementById("fname").focus();
+}
+function myFunction1() {
+  document.getElementById("b1").disabled = true;
+  document.getElementById("b2").disabled = false;
+  document.getElementById("b").disabled = false;
+  document.getElementById("cs").disabled = true;
+  document.getElementById("start").submit();
+  document.getElementById("fname").focus();
+}
+function myFunction2() {
+  document.getElementById("b1").disabled = false;
+  document.getElementById("b2").disabled = true;
+  document.getElementById("b").disabled = true;
+  document.getElementById("cs").disabled = false;
+  document.getElementById("stop").submit();
+}
+function myFunction3() {
+  document.getElementById("select").submit();
+}
+</script>
+
+</body>
+</html>

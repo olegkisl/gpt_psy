@@ -1,0 +1,14 @@
+{
+"client_name":"Том",
+"stop": ["Patient:","Том:","Том:"],
+"consultant_name":"Анна",
+"summary_name":" Резюме предыдущих сессий: ",
+"summary_generating_phrase" : "Дайте пожалуйста краткое резюме сессии",
+"end_session_message":"Сессия завершена. До свидания.",
+"summary_filter" : ["Конечно."],
+"temperature":0.4,
+"frequency_penalty":0.25,
+"presence_penalty":0.0,
+"model":"text-davinci-003",
+"max_tokens":250
+}

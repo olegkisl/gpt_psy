@@ -1,0 +1,14 @@
+{
+"client_name":"Julia",
+"stop": ["Julia","Patient:","patient:"],
+"consultant_name":"Alex",
+"summary_name":" Summary of the previous session: ",
+"summary_generating_phrase"  : "Give me the short summary of our session",
+"end_session_message":"The session was ended. See your later.",
+"summary_filter" : ["Sure.","In this session"],
+"temperature":0.4,
+"frequency_penalty":0.25,
+"presence_penalty":0.0,
+"model":"text-davinci-003",
+"max_tokens":250
+}
